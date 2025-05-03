@@ -1,11 +1,11 @@
 <!DOCTYPE html>
+<!--https://www.emailjs.com/-->
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>Contact Us</title>
   <link rel="icon" href="favicon.png" type="image/png">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Barcode & QR Generator</title>
   <meta name="description" content="Generate all types of barcodes and QR codes online for free." />
   <meta name="keywords" content="barcode generator, QR code generator, online barcode, JsBarcode, QRCode.js" />
   <meta name="author" content="Nizar" />
@@ -16,13 +16,19 @@
   <meta property="og:url" content="https://yourwebsite.com" />
   <link rel="icon" href="logo.png" type="image/png">
   <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("WFGkm4Dpkt9Txv9lm"); // استبدله بمفتاحك العام من EmailJS
+    })();
+  </script>
 </head>
 <body>
   <header class="header">
     <a href="index.html"><img src="Logo.png" alt="Logo" class="logo"></a>
     <nav class="navbar">
       <ul>
-        <li><a href="#">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="privacy.html">Privacy Policy</a></li>
@@ -41,37 +47,28 @@
       
 
     <main class="main-content" id="generator">
-      <h1>Barcode & QR Code Generator</h1>
-      <p>Use this tool to generate all types of barcodes and QR codes easily and without the need for additional software.</p>
-  <!-- Ad in the main content -->
-      <div class="ad-box-main">Ad Space - Main Content</div>
-      <input type="text" id="barcode-input" placeholder="Enter text" />
-
-      <select id="barcode-type">
-        <option value="CODE128">CODE128</option>
-        <option value="EAN13">EAN-13</option>
-        <option value="EAN8">EAN-8</option>
-        <option value="UPC">UPC-A</option>
-        <option value="ITF">ITF-14</option>
-        <option value="CODABAR">Codabar</option>
-        <option value="QR">QR Code</option>
-      </select>
-
-      <div class="buttons">
-        <button onclick="generateCode()">Generate</button>
-        <button onclick="downloadCode()">Download Image</button>
-      </div>
-
-      <div id="code-display">
-        <svg id="barcode"></svg>
-        <div id="qrcode"></div>
-      </div>
-
+      <div class="container">
+      <h1>Contact Us</h1>
+      <p>If you have any questions, suggestions, or feedback, feel free to contact us using the form below.</p>
+  
+      <form id="contact-form">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="user_name" placeholder="Enter your name" required />
+  
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+  
+        <input type="submit" value="Send Message" />
+      </form>
+  
+      <p id="status-msg"></p>
+    </div>
         <!-- Ad in the main content -->
         <div class="ad-box-main">Ad Space - Main Content</div>
 
           <!-- Ad in the main content -->
       <div class="ad-box-main">Ad Space - Main Content</div>
+      
     </main>
   </div>
 
@@ -83,7 +80,25 @@
       <a href="contact.html">Contact</a>
     </p>
   </footer>
-  
+  <script>
+    const form = document.getElementById('contact-form');
+    const statusMsg = document.getElementById('status-msg');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      emailjs.sendForm('service_mdgh3vp', 'template_3o3u6sb', this)
+      .then(() => {
+  statusMsg.textContent = "Message sent successfully!";
+  statusMsg.classList.remove("error");
+  form.reset();
+}, (error) => {
+  statusMsg.textContent = "Failed to send message: " + error.text;
+  statusMsg.classList.add("error");
+});
+
+    });
+  </script> 
 
   <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>

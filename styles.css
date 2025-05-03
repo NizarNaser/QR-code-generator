@@ -44,7 +44,7 @@
     display: flex;
     flex-wrap: wrap;
     padding: 1rem;
-    min-height: calc(100vh - 158px);
+    min-height: calc(100vh - 176px);
   }
   
   .sidebar {
@@ -164,4 +164,83 @@
     }
   }
   
+  /* حاوية المحتوى */
+  .container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+
+  }
   
+  /* العناوين */
+  h1 {
+    color: #0077cc;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* الروابط */
+  a {
+    color: #0077cc;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* الفورم */
+  form {
+    margin-top: 20px;
+  }
+  
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+  }
+  
+  input[type="submit"] {
+    background-color: #0077cc;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #005fa3;
+  }
+  
+  /* وسائل الاتصال */
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  #status-msg {
+    margin-top: 10px;
+    font-weight: bold;
+    color: green;
+  }
+  
+  #status-msg.error {
+    color: red;
+  }
+    
