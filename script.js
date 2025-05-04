@@ -71,5 +71,53 @@ function generateCode() {
     link.click();
     document.body.removeChild(link);
   }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    // تحميل الهيدر
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      });
+  
+    // تحميل الفوتر
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      });
+
+       // تحميل الفوتر
+    fetch('aside.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('aside').innerHTML = data;
+    });
+  });
+  
+
+  window.addEventListener('DOMContentLoaded', () => {
+    // تحميل الهيدر والفوتر بشكل غير مرئي
+    Promise.all([
+      fetch('header.html').then(res => res.text()),
+      fetch('aside.html').then(res => res.text()),
+      fetch('footer.html').then(res => res.text())
+    ]).then(([headerData, footerData]) => {
+      // إدراج المحتوى في الهيدر والفوتر
+      document.getElementById('header').innerHTML = headerData;
+      document.getElementById('aside').innerHTML = asideData;
+      document.getElementById('footer').innerHTML = footerData;
+  
+      // إضافة فئة "visible" للهيدر والفوتر
+      document.querySelector('header').classList.add('visible');
+      document.querySelector('aside').classList.add('visible');
+      document.querySelector('footer').classList.add('visible');
+  
+      // إضافة فئة "loaded" للجسم بعد تحميل جميع العناصر
+      document.body.classList.add('loaded');
+    });
+  });
+  
+  
   
   
