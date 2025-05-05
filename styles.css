@@ -42,7 +42,7 @@
   }
   
   .main-layout {
-    display: flex;
+    width: 100%;
     flex-wrap: wrap;
     padding: 1rem;
     min-height: calc(100vh - 176px);
@@ -66,8 +66,7 @@
   }
   
   .main-content {
-    flex: 1;
-    max-width: 80%;
+    max-width: 100%;
     background: white;
     padding: 2rem;
     border-radius: 8px;
