@@ -1,265 +1,387 @@
-/* styles.css */
-
+/* القاعدة العامة */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    animation: fadeIn 3s;
-  }
-  
-  .header {
-    background-color: #0077cc;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.2rem 2rem;
-    flex-wrap: wrap;
-    animation: fadeIn 3s;
-  }
-  
-  .logo {
-    height: 70px;
-    width: 120px;
-  }
-  
-  .navbar ul {
-    display: flex;
-    list-style: none;
-    gap: 1rem;
-  }
-  
-  .navbar a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .main-layout {
-    width: 100%;
-    flex-wrap: wrap;
-    padding: 1rem;
-    min-height: calc(100vh - 176px);
-  }
-  
-  .sidebar {
-    flex: 1 1 200px;
-    background: #e0e0e0;
-    padding: 1rem;
-    margin-right: 1rem;
-    min-width: 200px;
-    animation: fadeIn 3s;
-  }
-  
-  .ad-box {
-    background: #ccc;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    text-align: center;
-    font-weight: bold;
-  }
-  
-  .main-content {
-    max-width: 100%;
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    animation: fadeIn 3s;
-  }
-  
-  .main-content p{
-    text-align: center;
-    font-size: 16px;
-    margin-bottom: 5px;
-  }
-  input, select {
-    width: 100%;
-    padding: 0.8rem;
-    margin: 1rem 0;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .buttons {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-  
-  button {
-    background-color: #0077cc;
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.3s;
-  }
-  
-  button:hover {
-    background-color: #005fa3;
-  }
-  
-  #code-display {
-    margin-top: 2rem;
-    text-align: center;
-  }
-  
-  #qrcode canvas {
-    margin: auto;
-  }
-  
-  .footer {
-    background-color: #222;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-    animation: fadeIn 3s;
-  }
-  
-  @media (max-width: 768px) {
-    .main-layout {
-      flex-direction: column;
-    }
-    .main-content {
-      max-width: 98%;
-    }
-    .sidebar {
-      margin-right: 0;
-      margin-bottom: 1rem;
-    }
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  animation: fadeIn 1s ease-in-out;
+}
 
-  /* شريط جانبي */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* الرأس */
+.header {
+  background-color: #0077cc;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2rem 2rem;
+  flex-wrap: wrap;
+}
+
+.logo {
+  height: 70px;
+  width: 120px;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* التخطيط الأساسي */
+.main-layout {
+  display: flex;
+  padding: 1rem;
+  min-height: calc(100vh - 176px);
+}
+
+/* الشريط الجانبي */
 .sidebar {
-    flex: 1 1 200px;
-    background: #e0e0e0;
-    padding: 1rem;
-    margin-right: 1rem;
-    min-width: 200px;
-  }
-  
-  .ad-box {
-    background: #ccc;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    text-align: center;
-    font-weight: bold;
-    border-radius: 4px;
-  }
-  
-  .ad-box-main {
-    background: #f1f1f1;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    text-align: center;
-    font-weight: bold;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-  }
-  
-  /* تأكد من أن الإعلانات تظهر بشكل جيد على الشاشات الصغيرة */
-  @media (max-width: 768px) {
-    .sidebar {
-      margin-right: 0;
-      margin-bottom: 1rem;
-    }
-  }
-  
-  /* حاوية المحتوى */
-  .container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin-top: 50px;
-    margin-bottom: 50px;
-    border-radius: 10px;
+  flex: 1 1 20%;
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin-right: 1rem;
+  font-family: Arial, sans-serif;
+}
 
-  }
+.sidebar h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.favorite-articles-list,
+.top-articles-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.favorite-articles-list li{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.favorite-articles-list li,
+.top-articles-list li {
+  margin-bottom: 10px;
+}
+
+.favorite-articles-list li img{
+  width: 45px;
+}
+
+.favorite-articles-list a,
+.top-articles-list a {
+  text-decoration: none;
+  color: #0077cc;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.favorite-articles-list a:hover,
+.top-articles-list a:hover {
+  color: #004a99;
+  text-decoration: underline;
+}
+
+/* الإعلانات */
+.ad-box,
+.ad-box-main {
+  background: #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.ad-box-main {
+  background: #f1f1f1;
+  border: 1px solid #ddd;
+}
+
+/* المحتوى الرئيسي */
+.main-content {
+  flex: 1;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   
-  /* العناوين */
-  h1 {
-    color: #0077cc;
-    text-align: center;
-    margin-bottom: 20px;
-  }
   
-  /* الروابط */
-  a {
-    color: #0077cc;
-    text-decoration: none;
-  }
+}
+
+.main-content p {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+/* عناصر الإدخال */
+input, select, textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 1rem 0;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+form {
+  margin-top: 20px;
+}
+
+input[type="submit"], button {
+  background-color: #0077cc;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+input[type="submit"]:hover,
+button:hover {
+  background-color: #005fa3;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* عرض الكود */
+#code-display {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+#qrcode canvas {
+  margin: auto;
+}
+
+#status-msg {
+  margin-top: 10px;
+  font-weight: bold;
+  color: green;
+}
+
+#status-msg.error {
+  color: red;
+}
+
+/* الحاوية العامة */
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+h1 {
+  color: #0077cc;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* المقالات */
+.articles-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   
-  a:hover {
-    text-decoration: underline;
+}
+
+.article {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 450px;
+}
+
+.article h2 {
+  font-size: 1.5rem;
+  color: #0077cc;
+  margin-bottom: 10px;
+}
+
+.article p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.article img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.article footer {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* التحكّم بالتنقل بين الصفحات */
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination-controls button {
+  background-color: #0077cc;
+  color: white;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.pagination-controls button:hover {
+  background-color: #005fa3;
+}
+
+.pagination-controls span {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* الفاصل */
+.hr {
+  margin: 60px;
+  border: 2px solid rgb(247, 241, 241);
+}
+
+/* التذييل */
+.footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* التحريك العام */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* استجابة الشاشات الصغيرة */
+@media (max-width: 768px) {
+  .main-layout {
+    flex-direction: column;
   }
-  
-  /* الفورم */
-  form {
-    margin-top: 20px;
-  }
-  
-  input[type="text"],
-  textarea {
+
+  .main-content,
+  .sidebar {
     width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 16px;
+    margin-right: 0;
+    margin-bottom: 1rem;
   }
+
+  .articles-container {
+    flex-direction: column;
+  }
+
+  .article {
+    width: 100%;
+  }
+
+  .pagination-controls button {
+    padding: 8px 15px;
+  }
+}
+
+/* استجابة الشاشات المتوسطة */
+@media (min-width: 769px) and (max-width: 1250px) {
+  .articles-container {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .article {
+    width: 70%;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* styles.css article.html*/
+.article-img-desc{
+  display: flex;
+  justify-content: center;
+
+}
+
+.article-img-desc .desc{
+margin: 10px;
+width: 50%;
+max-width: 800px;
   
-  input[type="submit"] {
-    background-color: #0077cc;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
+}
+
+.article-full img {
+  width: 50%;
+  height: 50%;
+  margin: 1rem 0;
+}
+
+.article-full footer {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+@media (max-width: 1200px) {
+  .article-img-desc{
+    flex-direction: column;
+    justify-content: center;
   }
-  
-  input[type="submit"]:hover {
-    background-color: #005fa3;
+  .article-img-desc img{
+    width: 100%;
   }
-  
-  /* وسائل الاتصال */
-  ul {
-    list-style: none;
-    padding: 0;
+  .article-img-desc .desc{
+    width: 90%;
+    text-align: center;
+    overflow: hidden;
   }
-  
-  ul li {
-    margin-bottom: 10px;
-    font-size: 16px;
-  }
-  #status-msg {
-    margin-top: 10px;
-    font-weight: bold;
-    color: green;
-  }
-  
-  #status-msg.error {
-    color: red;
-  }
-  @keyframes fadeIn {
-    0%{
-      opacity: 0;
-    }
-    100%{
-      opacity: 1;
-    }
-  }
+}

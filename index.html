@@ -32,9 +32,7 @@
 <div id="header"></div>
 
   <div class="main-layout">
-
-      
-
+    <sidebar id="sidebar"></sidebar>
     <main class="main-content" id="generator">
       <h1>Barcode & QR Code Generator</h1>
       <p>Use this tool to generate all types of barcodes and QR codes easily and without the need for additional software.</p>
@@ -61,21 +59,28 @@
         <svg id="barcode"></svg>
         <div id="qrcode"></div>
       </div>
+      <hr class="hr"/>
+      <h1>Articles</h1>
+      <div id="articles-container" class="articles-container"></div>
 
-        <!-- Ad in the main content -->
-        <div class="ad-box-main">Ad Space - Main Content</div>
-
-          <!-- Ad in the main content -->
-      <div class="ad-box-main">Ad Space - Main Content</div>
+      <!-- Pagination Controls -->
+      <div id="pagination-controls" class="pagination-controls">
+          <button id="prev-button" onclick="changePage(-1)">Previous</button>
+          <span id="page-number">Page 1</span>
+          <button id="next-button" onclick="changePage(1)">Next</button>
+      </div>
     </main>
   </div>
 
+  
  <div id="footer"></div>
   
 
   <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
   <script src="script.js"></script>
+  <script src="sidebar.js"></script>
+
 
 
 </body>
