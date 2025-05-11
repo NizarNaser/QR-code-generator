@@ -87,9 +87,9 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('footer').innerHTML = footerData;
 
     // إضافة فئة "visible" للهيدر، الشريط الجانبي والفوتر بعد تحميلهم
-    document.querySelector('header').classList.add('visible');
-    document.querySelector('sidebar').classList.add('visible');
-    document.querySelector('footer').classList.add('visible');
+    document.getElementById('header').classList.add('visible');
+    document.getElementById('sidebar').classList.add('visible');
+    document.getElementById('footer').classList.add('visible');
 
     // إضافة فئة "loaded" للجسم بعد تحميل جميع العناصر
     document.body.classList.add('loaded');
