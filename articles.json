@@ -23,10 +23,7 @@
     "id":3,
     "title": "Using JSON in APIs (Application Programming Interfaces)",
     "description_min": "APIs are one of the main ways JSON is used for exchanging data between servers and clients...",
-    "description":"# 📡 APIs and JSON: How They Work Together\n\n## 🔧 What Are APIs?\n\n**APIs** (Application Programming Interfaces) are tools that allow two systems — often a **client** (like a web browser or mobile app) and a **server** — to communicate with each other.\n\nThey define:\n- **How** requests should be made\n- **What data** is expected\n- **What response** will be returned\n\n🧭 *Example:* When you check the weather using an app, the app communicates with a server through an API to get the data.\n\n---\n\n## 🧾 What Is JSON?\n\n**JSON** stands for **JavaScript Object Notation**. It’s a lightweight, text-based format used for representing structured data.\n\n### ✅ Example of JSON:\n```json\n{\n  \"name\": \"Alice\",\n  \"age\": 25,\n  \"email\": \"alice@example.com\"\n}\n```"
-
-}
-,{
+    "description":"# 📡 APIs and JSON: How They Work Together\n\n## 🔧 What Are APIs?\n\n**APIs** (Application Programming Interfaces) are tools that allow two systems — often a **client** (like a web browser or mobile app) and a **server** — to communicate with each other.\n\nThey define:\n- **How** requests should be made\n- **What data** is expected\n- **What response** will be returned\n\n🧭 *Example:* When you check the weather using an app, the app communicates with a server through an API to get the data.\n\n---\n\n## 🧾 What Is JSON?\n\n**JSON** stands for **JavaScript Object Notation**. It’s a lightweight, text-based format used for representing structured data.\n\n### ✅ Example of JSON:\n```json\n{\n  \"name\": \"Alice\",\n  \"age\": 25,\n  \"email\": \"alice@example.com\"\n}\n```",
     "image": "images/Using JSON in APIs (Application Programming Interfaces).webp",
     "author": "Nizar",
     "date": "2025-05-08",
