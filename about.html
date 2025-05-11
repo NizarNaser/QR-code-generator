@@ -7,7 +7,13 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
+  // إعداد الوضع الافتراضي للموافقة (لا توجد موافقة مبدئيًا)
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
   gtag('config', 'G-E32YMH7ZF5');
 </script>
   <meta charset="UTF-8" />
@@ -57,7 +63,36 @@
   <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
   <script src="script.js"></script>
   <script src="sidebar.js"></script>
-
+  <div id="cookie-banner" style="position: fixed; bottom: 0; width: 100%; background: #222; color: white; padding: 10px; text-align: center; z-index: 1000;">
+    هذا الموقع يستخدم ملفات تعريف الارتباط لتحسين تجربتك. 
+    <button onclick="acceptCookies()" style="margin-left: 10px;">أوافق</button>
+  </div>
+  
+  <script>
+    function acceptCookies() {
+      // تحديث الموافقة
+      gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'analytics_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted'
+      });
+  
+      // إخفاء البانر
+      document.getElementById('cookie-banner').style.display = 'none';
+  
+      // حفظ الموافقة في localStorage (اختياري)
+      localStorage.setItem('cookie_consent', 'true');
+    }
+  
+    // عرض البانر فقط إذا لم تتم الموافقة بعد
+    window.addEventListener('DOMContentLoaded', () => {
+      if (localStorage.getItem('cookie_consent') === 'true') {
+        acceptCookies(); // الموافقة مسبقًا
+      }
+    });
+  </script>
+  
 
 </body>
 </html>
