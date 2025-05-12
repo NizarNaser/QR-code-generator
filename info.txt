@@ -17,3 +17,6 @@ https://www.freenom.com/
 إنشاء ملف JSON بنجاح يحتوي على الشرح الكامل بتنسيق Markdown
 أضفها في <head> أو قبل نهاية <body>:
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+
+https://favicon.io/favicon-converter/
