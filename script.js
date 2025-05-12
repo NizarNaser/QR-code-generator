@@ -19,14 +19,22 @@ window.addEventListener("DOMContentLoaded", () => {
       document.getElementById("footer")?.classList.add("visible");
       document.body.classList.add("loaded");
 
-      // تحميل المقالات
+      // تحميل المقالات دائمًا (لجميع الصفحات)
       fetch("articles.json")
         .then(response => response.json())
         .then(data => {
           articles = data;
-          displayArticles();
-          displayTopArticles();
-          displayFullArticle(); // إن وُجد id
+
+          // إذا كنا في الصفحة الرئيسية
+          if (document.getElementById("articles-container")) {
+            displayArticles();
+            displayTopArticles();
+          }
+
+          // إذا كنا في صفحة article.html
+          if (document.getElementById("article-container")) {
+            displayFullArticle();
+          }
         })
         .catch(error =>
           console.error("فشل في تحميل بيانات المقالات:", error)
@@ -36,6 +44,7 @@ window.addEventListener("DOMContentLoaded", () => {
       console.error("فشل في تحميل القوالب الخارجية:", error)
     );
 });
+
 
 // توليد الباركود أو QR
 function generateCode() {
